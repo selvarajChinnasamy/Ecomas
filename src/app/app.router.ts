@@ -1,6 +1,5 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
+import { ModuleWithProviders } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -11,24 +10,10 @@ import { FooterComponent } from './footer/footer.component';
 import { CategoryComponent } from './category/category.component';
 import { ContactComponent } from './contact/contact.component';
 
-import { routes } from './app.router';
+export const router: Routes = [
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: 'home', component: HomeComponent },
+    { path: 'contact', component: ContactComponent }
+];
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    SliderComponent,
-    ProductsComponent,
-    ProductComponent,
-    FooterComponent,
-    CategoryComponent,
-    ContactComponent
-  ],
-  imports: [
-    BrowserModule,
-    routes,
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
-export class AppModule { }
+export const routes: ModuleWithProviders = RouterModule.forRoot(router);
