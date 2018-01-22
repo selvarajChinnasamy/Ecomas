@@ -12,6 +12,7 @@ import { CategoryComponent } from './category/category.component';
 import { ContactComponent } from './contact/contact.component';
 
 import { routes } from './app.router';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { routes } from './app.router';
     ProductComponent,
     FooterComponent,
     CategoryComponent,
-    ContactComponent
+    ContactComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,
